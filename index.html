@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resistência Cultural</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- HUD -->
+  <nav class="hud">
+    <ul>
+      <li><a href="#home">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="pagina2.html">Linha do Tempo</a></li>
+      <li><a href="pagina3.html">Mapa Interativo</a></li>
+      <li><a href="pagina4.html">Simbolismo Adinkra</a></li>
+      <li><a href="pagina5.html">Religiosidade</a></li>
+    </ul>
+  </nav>
+
+  <!-- Seção principal -->
+  <section id="home" class="home">
+    <h1>Bem-vindo ao nosso espaço de resistência cultural!</h1>
+    <p>Explore a influência da cultura Banto no Brasil e os impactos do colonialismo europeu na África através da tecnologia, religiosidade e arte.</p>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="sobre">
+    <h2>Sobre o Projeto</h2>
+    <p>Este site é dedicado a explorar e preservar a herança cultural dos povos Banto e sua influência no Brasil, além de analisar os impactos do colonialismo europeu na África.</p>
+  </section>
+
+  <!-- Carrossel -->
+  <section id="galeria" class="carrossel">
+    <img src="banto1.jpg" alt="Arte Banto 1" />
+    <img src="banto2.jpg" alt="Arte Banto 2" />
+    <img src="banto3.jpg" alt="Arte Banto 3" />
+  </section>
+
+  <!-- Modal -->
+  <section class="curiosidades">
+    <button onclick="abrirModal()">Curiosidades Culturais</button>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <p>A palavra "Banto" vem de "ba-ntu", significando "gente" ou "pessoas".</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapa Interativo -->
+  <section class="mapa">
+    <h2>Rota do Tráfico Negreiro</h2>
+    <img src="mapa.png" alt="Mapa Interativo" usemap="#mapaAfrica" />
+    <map name="mapaAfrica">
+      <area shape="circle" coords="200,200,40" href="#" alt="Congo" />
+      <area shape="circle" coords="300,250,40" href="#" alt="Angola" />
+    </map>
+  </section>
+
+  <!-- Botão secreto -->
+  <div class="secreto">
+    <button id="botaoSecreto">Código</button>
+    <input type="text" id="codigoInput" placeholder="Digite o código..." />
+  </div>
+
+  <!-- Tela Preta + Mensagens -->
+  <div id="preTela" class="pre-tela">
+    <h1 class="bons">Bon's Burgers</h1>
+  </div>
+  <div id="mensagemEspecial" class="mensagem-especial">I still here</div>
+  <div id="sha" class="sha">Sha</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
