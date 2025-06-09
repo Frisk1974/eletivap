@@ -2,78 +2,284 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resistência Cultural</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Simples – Conhecimento sobre Símbolos Adinkra e Cultura Banto</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap');
+
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #6b7280;
+      --color-text-heading: #111827;
+      --color-accent: #000000;
+      --border-radius: 0.75rem;
+      --shadow-light: rgba(0, 0, 0, 0.05);
+      --transition: 0.3s ease;
+      --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --max-width: 780px;
+    }
+
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-family);
+      font-size: 18px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 48px;
+      color: var(--color-text-heading);
+      margin-bottom: 0.25rem;
+      text-align: center;
+      user-select: text;
+      max-width: var(--max-width);
+      width: 100%;
+    }
+
+    p.subtitle {
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--color-text);
+      margin-bottom: 3rem;
+      max-width: var(--max-width);
+      text-align: center;
+      user-select: text;
+      width: 100%;
+    }
+
+    form {
+      background: var(--color-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 12px 30px var(--shadow-light);
+      padding: 2.5rem 3rem;
+      max-width: var(--max-width);
+      width: 100%;
+    }
+
+    .question {
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--color-text-heading);
+      margin-bottom: 1rem;
+      user-select: text;
+    }
+
+    .answers {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2.25rem 0;
+    }
+
+    .answers li {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--color-text-heading);
+      user-select: none;
+      padding: 0.6rem 1rem;
+      border-radius: 0.5rem;
+      background: #f9fafb;
+      transition: background-color var(--transition);
+    }
+
+    label:hover,
+    label:focus-within {
+      background: #e5e7eb;
+      outline: none;
+    }
+
+    input[type="radio"],
+    input[type="text"],
+    textarea {
+      cursor: pointer;
+      font-family: var(--font-family);
+      font-size: 1rem;
+    }
+
+    input[type="radio"] {
+      margin-right: 1rem;
+      accent-color: var(--color-accent);
+      width: 1.3rem;
+      height: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem 0.8rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 0.5rem;
+      color: var(--color-text-heading);
+      resize: vertical;
+      transition: border-color var(--transition);
+    }
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
+    textarea {
+      min-height: 80px;
+      max-height: 160px;
+    }
+
+    button {
+      width: 100%;
+      background-color: var(--color-accent);
+      color: var(--color-bg);
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color var(--transition);
+      user-select: none;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: #222222;
+      outline: none;
+    }
+
+    #result {
+      margin-top: 2rem;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-text-heading);
+      text-align: center;
+      white-space: pre-wrap;
+      user-select: text;
+      max-width: var(--max-width);
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  <!-- HUD -->
-  <nav class="hud">
-    <ul>
-      <li><a href="#home">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#galeria">Galeria</a></li>
-      <li><a href="pagina2.html">Linha do Tempo</a></li>
-      <li><a href="pagina3.html">Mapa Interativo</a></li>
-      <li><a href="pagina4.html">Simbolismo Adinkra</a></li>
-      <li><a href="pagina5.html">Religiosidade</a></li>
-    </ul>
-  </nav>
 
-  <!-- Seção principal -->
-  <section id="home" class="home">
-    <h1>Bem-vindo ao nosso espaço de resistência cultural!</h1>
-    <p>Explore a influência da cultura Banto no Brasil e os impactos do colonialismo europeu na África através da tecnologia, religiosidade e arte.</p>
-  </section>
+  <h1>Conhecimento sobre Símbolos Adinkra e Cultura Banto</h1>
+  <p class="subtitle">Responda às perguntas abaixo para ajudar a entender seu conhecimento prévio, para nossa apresentação na conferência 3M e Unicamp Portas Abertas.</p>
 
-  <!-- Seção Sobre -->
-  <section id="sobre" class="sobre">
-    <h2>Sobre o Projeto</h2>
-    <p>Este site é dedicado a explorar e preservar a herança cultural dos povos Banto e sua influência no Brasil, além de analisar os impactos do colonialismo europeu na África.</p>
-  </section>
+  <form id="quiz-form" novalidate>
+    <fieldset>
+      <legend class="visually-hidden">Quiz simples para coleta de dados sobre símbolos Adinkra e cultura Banto</legend>
 
-  <!-- Carrossel -->
-  <section id="galeria" class="carrossel">
-    <img src="banto1.jpg" alt="Arte Banto 1" />
-    <img src="banto2.jpg" alt="Arte Banto 2" />
-    <img src="banto3.jpg" alt="Arte Banto 3" />
-  </section>
+      <p class="question">1. Você já ouviu falar dos símbolos Adinkra?</p>
+      <ul class="answers" role="radiogroup" aria-labelledby="q1-label" id="q1" tabindex="0">
+        <li><label><input type="radio" name="q1" value="Sim" required /> Sim</label></li>
+        <li><label><input type="radio" name="q1" value="Não" /> Não</label></li>
+      </ul>
 
-  <!-- Modal -->
-  <section class="curiosidades">
-    <button onclick="abrirModal()">Curiosidades Culturais</button>
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="fechar" onclick="fecharModal()">&times;</span>
-        <p>A palavra "Banto" vem de "ba-ntu", significando "gente" ou "pessoas".</p>
-      </div>
-    </div>
-  </section>
+      <p class="question">2. Você já viu esses símbolos em algum lugar?</p>
+      <ul class="answers" role="radiogroup" aria-labelledby="q2-label" id="q2" tabindex="0">
+        <li><label><input type="radio" name="q2" value="Sim" required /> Sim</label></li>
+        <li><label><input type="radio" name="q2" value="Não" /> Não</label></li>
+      </ul>
 
-  <!-- Mapa Interativo -->
-  <section class="mapa">
-    <h2>Rota do Tráfico Negreiro</h2>
-    <img src="mapa.png" alt="Mapa Interativo" usemap="#mapaAfrica" />
-    <map name="mapaAfrica">
-      <area shape="circle" coords="200,200,40" href="#" alt="Congo" />
-      <area shape="circle" coords="300,250,40" href="#" alt="Angola" />
-    </map>
-  </section>
+      <p class="question">3. De onde você acha que esses símbolos Adinkra vêm? <span aria-hidden="true">(Escreva sua resposta)</span></p>
+      <input type="text" name="q3" placeholder="Escreva sua resposta aqui" required aria-label="De onde você acha que esses símbolos vêm?" />
 
-  <!-- Botão secreto -->
-  <div class="secreto">
-    <button id="botaoSecreto">Código</button>
-    <input type="text" id="codigoInput" placeholder="Digite o código..." />
-  </div>
+      <p class="question">4. Você já ouviu falar da cultura Banto da África?</p>
+      <ul class="answers" role="radiogroup" aria-labelledby="q4-label" id="q4" tabindex="0">
+        <li><label><input type="radio" name="q4" value="Sim" required /> Sim</label></li>
+        <li><label><input type="radio" name="q4" value="Não" /> Não</label></li>
+      </ul>
 
-  <!-- Tela Preta + Mensagens -->
-  <div id="preTela" class="pre-tela">
-    <h1 class="bons">Bon's Burgers</h1>
-  </div>
-  <div id="mensagemEspecial" class="mensagem-especial">I still here</div>
-  <div id="sha" class="sha">Sha</div>
+      <p class="question">5. Conte se você conhece alguma influência da cultura africana na culinária ou religiosidade brasileira.</p>
+      <textarea name="q5" placeholder="Escreva sua resposta aqui (pode deixar em branco)" aria-label="Influência da cultura africana na culinária ou religiosidade brasileira"></textarea>
 
-  <script src="script.js"></script>
+      <p class="question">6. Você já sabe ou ouviu falar do uso da técnica de fundição do ferro pelos povos Banto na África?</p>
+      <ul class="answers" role="radiogroup" aria-labelledby="q6-label" id="q6" tabindex="0">
+        <li><label><input type="radio" name="q6" value="Sim" required /> Sim</label></li>
+        <li><label><input type="radio" name="q6" value="Não" /> Não</label></li>
+      </ul>
+
+      <p class="question">7. Você acredita que a cultura africana influencia ainda hoje a identidade brasileira?</p>
+      <ul class="answers" role="radiogroup" aria-labelledby="q7-label" id="q7" tabindex="0">
+        <li><label><input type="radio" name="q7" value="Sim" required /> Sim</label></li>
+        <li><label><input type="radio" name="q7" value="Não" /> Não</label></li>
+      </ul>
+
+      <p class="question">8. Você conhece outros símbolos ou tradições africanas presentes na cultura brasileira? Quais?</p>
+      <textarea name="q8" placeholder="Escreva sua resposta aqui (pode deixar em branco)" aria-label="Outros símbolos ou tradições africanas na cultura brasileira"></textarea>
+
+      <p class="question">9. Você já participou ou conhece alguma atividade cultural (festas, danças, músicas) que celebra tradições africanas?</p>
+      <ul class="answers" role="radiogroup" aria-labelledby="q9-label" id="q9" tabindex="0">
+        <li><label><input type="radio" name="q9" value="Sim" required /> Sim</label></li>
+        <li><label><input type="radio" name="q9" value="Não" /> Não</label></li>
+      </ul>
+
+      <p class="question">10. Se quiser, deixe uma mensagem ou comentário sobre a importância da cultura africana no Brasil.</p>
+      <textarea name="q10" placeholder="Escreva sua mensagem ou comentário aqui (pode deixar em branco)" aria-label="Mensagem ou comentário sobre a cultura africana no Brasil"></textarea>
+
+      <button type="submit">Enviar respostas</button>
+    </fieldset>
+  </form>
+
+  <div id="result" aria-live="polite" role="region" tabindex="-1"></div>
+
+  <script>
+    (() => {
+      const form = document.getElementById('quiz-form');
+      const result = document.getElementById('result');
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        result.textContent = '';
+
+        const formData = new FormData(form);
+        const answers = {};
+        for (const [key, value] of formData.entries()) {
+          answers[key] = value.trim();
+        }
+
+        // Verificar se todas perguntas obrigatórias foram respondidas
+        const required = ['q1','q2','q3','q4','q6','q7','q9'];
+        for(const key of required){
+          if(!answers[key]){
+            alert('Por favor, responda todas as perguntas obrigatórias antes de enviar.');
+            return;
+          }
+        }
+
+        // Montar resumo para coleta dos dados, incluindo respostas opcionais
+        let summary = 'Obrigado por participar!\n\nRespostas enviadas:\n';
+        summary += `1. Conhecimento dos símbolos Adinkra? - ${answers.q1}\n`;
+        summary += `2. Já viu esses símbolos? - ${answers.q2}\n`;
+        summary += `3. De onde acha que vêm os símbolos? - ${answers.q3 || '(sem resposta)'}\n`;
+        summary += `4. Conhece a cultura Banto? - ${answers.q4}\n`;
+        summary += `5. Influência africana na culinária/religiosidade? - ${answers.q5 || '(sem resposta)'}\n`;
+        summary += `6. Sabe da fundição do ferro pelos povos Banto? - ${answers.q6}\n`;
+        summary += `7. A cultura africana influencia a identidade brasileira hoje? - ${answers.q7}\n`;
+        summary += `8. Outros símbolos ou tradições africanas na cultura brasileira? - ${answers.q8 || '(sem resposta)'}\n`;
+        summary += `9. Participa ou conhece atividades culturais africanas? - ${answers.q9}\n`;
+        summary += `10. Comentário sobre a cultura africana no Brasil? - ${answers.q10 || '(sem resposta)'}\n\n`;
+        summary += 'Esses dados serão usados para nossa apresentação na conferência 3M e Unicamp Portas Abertas.';
+
+        result.textContent = summary;
+        result.focus();
+      });
+    })();
+  </script>
+
 </body>
 </html>
